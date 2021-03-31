@@ -2,11 +2,15 @@
   "cursos": [
     {
       "id": 1,
-      "nome": "Angular"
+      "nome": "Angular X"
     },
     {
       "nome": "Java OO",
       "id": 2
+    },
+    {
+      "nome": "Material angular",
+      "id": 3
     }
   ],
   "outros": [

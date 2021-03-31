@@ -23,15 +23,20 @@
                     <td>{{ curso.nome }}</td>
                     <td>
                         <span class="float-right">
-                            <button class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
+                            <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(curso.id)">Atualizar</button>
                             {{ ' ' }}
-                            <button class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
+                            <button class="btn btn-outline-danger mb-1 btn-sm" (click)=onDelete(curso)>Remover</button>
                         </span>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <ng-template #loading>
+
+         <ng-template #loading>
+                <span>Carregando cursos....</span>
+        </ng-template>
+
+        <!--ng-template #loading>
             <div *ngIf="error$ | async; else loadingNoError">
                 Erro ao carregar cursos tente novamente mais tarde.
             </div>
@@ -39,6 +44,15 @@
                 <span>Carregando cursos....</span>
             </ng-template>
             
-        </ng-template>
+        </ng-template-->
     </div>
 </div>
+
+
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Confirma a Exclusão?</p>
+    <button type="button" class="btn btn-default" (click)="onConfirmDelete()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="onDeclineDelete()" >Não</button>
+  </div>
+</ng-template>
